@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+  <typeAliases>  
+  	<typeAlias type="com.study.jsp.model.UserVO" alias="uVo" />
+  	<typeAlias type="com.study.jsp.model.BoardVO" alias="bVo" />
+  </typeAliases>	
+
+  <!-- DB 연결정보 설정 -> 마이바티즈 자동 연결(나중에 이 부분은 스프링 설정파일 root-context.xml 파일로 이동하게 된다. -->
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED"><!-- 커넥션풀을 기본설정값으로 사용한다는 의미 -->
+<!-- 
+<property name="poolMaximumActiveConnections" value="20"/>            
+<property name="poolMaximumIdleConnections" value="20"/>          
+<property name="poolMaximumCheckoutTime" value="20000"/>           
+<property name="poolPingEnabled" value="true"/>           
+<property name="poolPingQuery" value="select 1"/>            
+<property name="poolPingConnectionsNotUsedFor" value="10000"/>            
+<property name="poolTimeToWait" value="15000"/>
+
+[옵션설명]
+poolMaximumActiveConnections : 활성화된 최대 커넥션 수
+poolMaximumIdleConnections : 유휴상태에서 최대 커넥션 수
+poolMaximumCheckoutTime : 최대 커넥션 획득 시간(ms)
+poolPingEnabled : 커넥션이 살아있는지 ping 테스트 여부
+poolPingQuery : 커넥션 ping 테스트 쿼리 (DB 종류에 따라 적절하게 수정)
+poolPingConnectionsNotUsedFor : 유휴상태의 커넥션이 닫히는지 판단할 시간(ms)
+poolTimeToWait : 사용된 커넥션을 기다리는 시간
+ -->      
+        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/mvc1"/>
+        <property name="username" value="mvcweb"/>
+        <property name="password" value="1234"/>
+      </dataSource>
+    </environment>
+  </environments>
+  
+  <mappers>
+  	<!-- SQL 쿼리를 정의한 xml 설정파일 -->
+    <mapper resource="myBatis/mapper/UserMapper.xml"/>
+    <mapper resource="myBatis/mapper/BoardMapper.xml"/>
+  </mappers>
+</configuration>
+
+

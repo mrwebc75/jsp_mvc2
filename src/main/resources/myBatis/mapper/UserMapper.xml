@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- 네임스페이스 값은 "풀패키지+인터페이스명" -->
+<mapper namespace="com.study.jsp.dao.UserMapper">
+	<cache />
+
+	<select id="getTime" resultType="String">
+		select now();
+	</select>
+	
+	<select id="getOne" resultType="uVo">
+        select * from user where userid = #{userid} and password = #{password}
+	</select>
+</mapper>
