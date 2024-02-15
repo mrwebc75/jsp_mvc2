@@ -56,7 +56,7 @@ public class LoginController extends HttpServlet {
       session.setAttribute("userid", dto.getUserid());
       session.setAttribute("name", dto.getName());
 
-      response.sendRedirect("./board/list.jsp");
+      response.sendRedirect("./listCtrl");
     } else {// 로그인 실패
       response.sendRedirect("./index.jsp");
     }

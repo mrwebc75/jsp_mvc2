@@ -13,7 +13,7 @@
 		<!-- http://localhost:8090/jsp_mvc2/loginCtrl -->
 		<form action="${pageContext.request.contextPath}/loginCtrl" method="post">
 			<fieldset>
-				<legend>모델1 - 게시판</legend>
+				<legend>모델2 - 게시판</legend>
 				
 				<ul>
 					<li>
