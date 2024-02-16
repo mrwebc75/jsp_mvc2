@@ -1,7 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
-
+<%
+	//응답결과를 캐시할 것인가에 대한 설정
+	response.setHeader("Pragma","No-cache"); 
+	response.setHeader("Cache-Control","no-cache");
+	response.addHeader("Cache-Control","no-store"); 
+	response.setDateHeader("Expires",1L); 
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,7 +53,7 @@
 			</tbody>
 		</table>
 		
-		<p><a href="./write.jsp">새글등록</a></p>
+		<p><a href="./board/write.jsp">새글등록</a></p>
 	</div>
 </body>
 </html>

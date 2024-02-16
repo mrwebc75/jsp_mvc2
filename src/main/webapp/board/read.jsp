@@ -8,10 +8,13 @@
 <meta charset="UTF-8">
 <title>JSP</title>
 </head>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
 <body>
 	<div id="wrap">
 		<h1>상세 게시글</h1>
-		<form action="${pageContext.request.contextPath}/editCtrl" method="post">
+		<form action="${contextPath}/editCtrl" method="post">
 			<input type="hidden" name="seq" value="${dto.seq}">
 			<fieldset>
 				<legend>글내용</legend>
@@ -49,8 +52,8 @@
 		</form>
 		<p>
 			<a href="./write.jsp">글등록</a> <br>
-			<a href="./deleteCtrl?seq=${dto.seq}">글삭제</a> <br>
-			<a href="./listCtrl">글목록</a> <br>
+			<a href="${contextPath}/deleteCtrl?seq=${dto.seq}">글삭제</a> <br>
+			<a href="${contextPath}/listCtrl">글목록</a> <br>
 		</p>
 	</div>
 </body>

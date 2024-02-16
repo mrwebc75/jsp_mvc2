@@ -11,7 +11,7 @@
 	<div id="wrap">
 		<h1>새글등록</h1>
 		
-		<form action="./writeCtrl.jsp" method="post">
+		<form action="${pageContext.request.contextPath}/writeCtrl" method="post">
 			<input type="hidden" name="userid" value="${userid}" />
 			<fieldset>
 				<legend>내용입력</legend>
