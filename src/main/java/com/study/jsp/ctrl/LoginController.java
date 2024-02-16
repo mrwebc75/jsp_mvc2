@@ -56,6 +56,13 @@ public class LoginController extends HttpServlet {
       session.setAttribute("userid", dto.getUserid());
       session.setAttribute("name", dto.getName());
 
+/*
+  sendRedirect()의 기준(루트)은 http://localhost:8090 까지 이므로 아래의 세가지 방법이 가능하다.      
+  만약 설정해도 반영이 안될 경우는 Project>Clean 을 하면 해결된다.
+    1. response.sendRedirect("/jsp_mvc2/listCtrl");
+    2. response.sendRedirect(request.getContextPath() + "/listCtrl");
+    3. response.sendRedirect("./listCtrl");  
+*/      
       response.sendRedirect("./listCtrl");
     } else {// 로그인 실패
       response.sendRedirect("./index.jsp");
